@@ -1,0 +1,363 @@
+Reverse the string:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str[100],temp;
+    int l;
+    printf("Enter a string");
+    scanf("%s",str);
+    l=strlen(str);
+    for (int i=0;i<l/2;i++)
+    {
+        temp=str[i];
+        str[i]=str[l-i-1];
+        str[l-i-1]=temp;
+        
+    }
+    printf("Reversed:");
+    printf(str);
+}
+
+or
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str[100],rev[100];
+    int i;
+    printf("Enter a string:");
+    scanf("%s",str);
+    int len;
+    len=strlen(str);
+    for(i=0;i<len;i++){
+        rev[i]=str[len-i-1];
+    }
+    rev[i]='\0';
+    printf("Reversed String :%s",rev);
+}
+
+Fibonacci series:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int a=0,b=1,c,n;
+    int i;
+    printf("Enter the number of terms:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        c=a+b;
+        printf("%d ",a);
+        a=b;
+        b=c;
+        
+    }
+}
+
+Palindrome number:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int n,ld,ori,res=0;
+    printf("Enter a no:");
+    scanf("%d",&n);
+    ori=n;
+    while(n!=0){
+        ld=n%10;
+        res=res*10+ld;
+        n=n/10;
+        
+    }
+    if(ori==res){
+        printf("Palindrome");
+    }
+    else{
+        
+        printf("Not");
+    }
+}
+
+Largest element in array:
+#include<stdio.h>
+#include<string.h>
+void main(){
+    int a[10]={1,2,3,4,64,23},g;
+    g=a[0];
+    for(int i=0;i<10;i++){
+        if(g<a[i]){
+            g=a[i];
+        }
+    }
+    printf("%d",g);
+}
+
+Find the number of set bit in decimal:
+#include<stdio.h>
+#include<string.h>
+void main(){
+    int n;
+    printf("Enter a number");
+    scanf("%d",&n);
+    int count=0;
+    while(n>0){
+     if(n&1){
+        count+=1;
+    }
+    n=n>>1;
+    }
+    printf("%d",count);
+}
+
+
+Convert decimal to binary:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    
+    int n,binary[32];
+    printf("Enter a decimal no:");
+    scanf("%d",&n);
+    
+    if(n==0){
+        printf("Binary:0");
+    }
+    int i=0;
+    while(n>0){
+        
+        binary[i]=n%2;
+        n=n/2;
+        i++;
+    }
+    printf("Binary:");
+    for(int j=i-1;j>=0;j--){
+        printf("%d",binary[j]);
+        
+    }
+    
+}
+
+Armstrong Number:
+#include<stdio.h>
+#include<string.h>
+int main(){
+     int r=0,n,arm=0;
+     
+     printf("Enter a nuber");
+     scanf("%d",&n);
+     int ori=n;
+     while(n>0){
+         r=n%10;
+         arm=(r*r*r)+arm;
+         n=n/10;
+     }
+     if(ori==arm){
+         printf("armstrong");
+     }
+     else{
+         printf("not");
+     }
+}
+Using python:
+n=int(input('enter the num'))
+res=0
+temp=n
+digit=len(str(n))
+while n>0:
+    ld=n%10
+    res=res+ld**digit
+    n=n//10
+if res==temp:
+    print('arm')
+else:
+    print('not')
+
+
+Factorial:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int n,fact=1;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    
+    for(int i=1;i<=n;i++){
+        fact=fact*i;
+    }
+    printf("%d",fact);
+}
+
+Bit Manipulation:
+//clearing the bit
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    unsigned char b=15;
+    b=b&(~(1<<2));
+    b&=~(1<<6);
+    printf("%d",b);
+    
+}
+//toggling the bit
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    unsigned char b=15;
+    b^=(1<<2);
+
+    printf("%d",b);
+    
+}
+
+
+//setting the bit
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    unsigned char b=15;
+    b|=(1<<2);
+
+    printf("%d",b);
+    
+}
+
+//returning the 3rd bit of 10
+#include<stdio.h>
+#include<string.h>
+int main(){
+    unsigned char b=10;
+    int t;
+    t=(b>>2)&1;
+    printf("%d",t);
+}
+
+Prime Number:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int n,i,c=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    
+    for(i=1;i<=n;i++){
+        if(n%i==0){
+            c+=1;
+        }
+    }
+    if(c==2){
+        printf("Prime Number");
+    }
+    else{
+        printf("Not a prime");
+    }
+}
+
+
+allocate memory:
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function that allocates memory and returns pointer
+int* allocateMemory(int size) {
+    int* ptr = (int*) malloc(size * sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory allocation failed!\n");
+        exit(1);
+    }
+
+    // Initialize with zero
+    for (int i = 0; i < size; i++) {
+        ptr[i] = 0;
+    }
+
+    return ptr;
+}
+
+int main() {
+    int size = 5;
+    int* arr = allocateMemory(size);
+
+    // Update values in main
+    for (int i = 0; i < size; i++) {
+        arr[i] = i * 10;
+    }
+
+    // Print values
+    printf("Updated array:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Free the memory
+    free(arr);
+
+    return 0;
+}
+
+
+Reverse the array?
+
+#include<stdio.h>
+int main(){
+    int a[100],n,i;
+    printf("enter the length of the array");
+    scanf("%d",&n);
+    printf("enter the array elements");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for(i=n-1;i>=0;i--){
+        printf("%d",a[i]);
+    }
+}
+
+
+
+Reverse the string?
+
+#include <stdio.h>
+int main() {
+    char str[100], temp;
+    int i = 0, j, length = 0;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    while (str[length] != '\0') {
+        length++;
+    }
+    j = length - 1;
+    while (i < j) {
+        // Swap characters
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        i++;
+        j--;
+    }
+    printf("Reversed string: %s\n", str);
+    return 0;
+}
+
+
+Leap year:
+
+#include <stdio.h>
+int main() {
+    int year;
+    printf("enter the year");
+    scanf("%d",&year);
+    if (year%100==0){
+        if (year%400==0){
+            printf("%d=leap");
+        }
+        else{
+            printf("%d=not");
+        }
+    }
+    else{
+        if (year%4==0){
+            printf("%d=leap");
+        }
+        else{
+            printf("%d=not");
+        }
+    }
+    return 0;
+}
