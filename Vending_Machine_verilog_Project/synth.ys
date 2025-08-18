@@ -1,0 +1,8 @@
+read_verilog vending_machine.v
+hierarchy -top vending_machine
+proc
+flatten
+opt
+techmap
+clean
+show -format dot -prefix vending_machine

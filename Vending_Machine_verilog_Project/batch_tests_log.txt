@@ -1,0 +1,273 @@
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/mirafra/PycharmProjects/Vending_Machine'
+rm -f results.xml
+MODULE=test_vending_machine_all TESTCASE= TOPLEVEL=vending_machine TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/mirafra/PycharmProjects/Vending_Machine/.venv/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:108  in set_program_name_in_venv        Using Python virtual environment interpreter at /home/mirafra/PycharmProjects/Vending_Machine/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/mirafra/PycharmProjects/Vending_Machine/.venv/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1754649937
+     0.00ns INFO     cocotb.regression                  pytest not found, install it to enable better AssertionError messages
+     0.00ns INFO     cocotb.regression                  Found test test_vending_machine_all.vending_machine_test
+     0.00ns INFO     cocotb.regression                  running vending_machine_test (1/1)
+                                                          Runs all test cases for the vending machine logic including stock and out_of_stock.
+    10.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST STARTED ==========
+    10.00ns INFO     cocotb.vending_machine             Test Case 1: Buy Product A (₹15) with ₹15
+    15.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    15.00ns INFO     cocotb.vending_machine             Test Case 2: Buy Product B (₹5) with ₹10 — Expect Out of Stock since stock=0
+    25.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹10, Out of Stock: 1
+    25.00ns INFO     cocotb.vending_machine             Test Case 3: Buy Product C (₹10) with ₹8 — Insufficient Money
+    35.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹8, Out of Stock: 0
+    35.00ns INFO     cocotb.vending_machine             Test Case 4: Buy Product D (₹5) with ₹5 — Exact Money
+    45.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    45.00ns INFO     cocotb.vending_machine             Test Case 5: Invalid Product Code (111) with ₹20
+    55.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹15, Out of Stock: 1
+    55.00ns INFO     cocotb.vending_machine             Testing stock depletion for Product D (code 3)
+    55.00ns INFO     cocotb.vending_machine             Depleting stock: 1st purchase of Product D with ₹5
+    65.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    65.00ns INFO     cocotb.vending_machine             Depleting stock: 2nd purchase attempt of Product D with ₹5 — Expect Out of Stock
+    75.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    75.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST ENDED ==========
+    75.00ns INFO     cocotb.regression                  vending_machine_test passed
+    75.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_vending_machine_all.vending_machine_test   PASS          75.00           0.00      33993.62  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                  75.00           0.01      10124.13  **
+                                                        *******************************************************************************************************
+                                                        
+VCD info: dumpfile dump.vcd opened for output.
+make[1]: Leaving directory '/home/mirafra/PycharmProjects/Vending_Machine'
+
+
+===== Batch Test Run at: 2025-08-08 16:15:35 =====
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/mirafra/PycharmProjects/Vending_Machine'
+rm -f results.xml
+MODULE=test_vending_machine_all TESTCASE= TOPLEVEL=vending_machine TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/mirafra/PycharmProjects/Vending_Machine/.venv/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:108  in set_program_name_in_venv        Using Python virtual environment interpreter at /home/mirafra/PycharmProjects/Vending_Machine/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/mirafra/PycharmProjects/Vending_Machine/.venv/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1754649957
+     0.00ns INFO     cocotb.regression                  pytest not found, install it to enable better AssertionError messages
+     0.00ns INFO     cocotb.regression                  Found test test_vending_machine_all.vending_machine_test
+     0.00ns INFO     cocotb.regression                  running vending_machine_test (1/1)
+                                                          Runs all test cases for the vending machine logic including stock and out_of_stock.
+    10.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST STARTED ==========
+    10.00ns INFO     cocotb.vending_machine             Test Case 1: Buy Product A (₹15) with ₹15
+    15.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    15.00ns INFO     cocotb.vending_machine             Test Case 2: Buy Product B (₹5) with ₹10 — Expect Out of Stock since stock=0
+    25.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹10, Out of Stock: 1
+    25.00ns INFO     cocotb.vending_machine             Test Case 3: Buy Product C (₹10) with ₹8 — Insufficient Money
+    35.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹8, Out of Stock: 0
+    35.00ns INFO     cocotb.vending_machine             Test Case 4: Buy Product D (₹5) with ₹5 — Exact Money
+    45.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    45.00ns INFO     cocotb.vending_machine             Test Case 5: Invalid Product Code (111) with ₹20
+    55.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹15, Out of Stock: 1
+    55.00ns INFO     cocotb.vending_machine             Testing stock depletion for Product D (code 3)
+    55.00ns INFO     cocotb.vending_machine             Depleting stock: 1st purchase of Product D with ₹5
+    65.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    65.00ns INFO     cocotb.vending_machine             Depleting stock: 2nd purchase attempt of Product D with ₹5 — Expect Out of Stock
+    75.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    75.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST ENDED ==========
+    75.00ns INFO     cocotb.regression                  vending_machine_test passed
+    75.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_vending_machine_all.vending_machine_test   PASS          75.00           0.00      35250.67  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                  75.00           0.01      11286.08  **
+                                                        *******************************************************************************************************
+                                                        
+VCD info: dumpfile dump.vcd opened for output.
+make[1]: Leaving directory '/home/mirafra/PycharmProjects/Vending_Machine'
+
+
+===== Batch Test Run at: 2025-08-08 16:15:55 =====
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/mirafra/PycharmProjects/Vending_Machine'
+rm -f results.xml
+MODULE=test_vending_machine_all TESTCASE= TOPLEVEL=vending_machine TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/mirafra/PycharmProjects/Vending_Machine/.venv/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:108  in set_program_name_in_venv        Using Python virtual environment interpreter at /home/mirafra/PycharmProjects/Vending_Machine/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/mirafra/PycharmProjects/Vending_Machine/.venv/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1754651033
+     0.00ns INFO     cocotb.regression                  pytest not found, install it to enable better AssertionError messages
+     0.00ns INFO     cocotb.regression                  Found test test_vending_machine_all.vending_machine_test
+     0.00ns INFO     cocotb.regression                  running vending_machine_test (1/1)
+                                                          Runs all test cases for the vending machine logic including stock and out_of_stock.
+    10.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST STARTED ==========
+    10.00ns INFO     cocotb.vending_machine             Test Case 1: Buy Product A (₹15) with ₹15
+    15.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    15.00ns INFO     cocotb.vending_machine             Test Case 2: Buy Product B (₹5) with ₹10 — Expect Out of Stock since stock=0
+    25.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹10, Out of Stock: 1
+    25.00ns INFO     cocotb.vending_machine             Test Case 3: Buy Product C (₹10) with ₹8 — Insufficient Money
+    35.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹8, Out of Stock: 0
+    35.00ns INFO     cocotb.vending_machine             Test Case 4: Buy Product D (₹5) with ₹5 — Exact Money
+    45.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    45.00ns INFO     cocotb.vending_machine             Test Case 5: Invalid Product Code (111) with ₹20
+    55.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹15, Out of Stock: 1
+    55.00ns INFO     cocotb.vending_machine             Testing stock depletion for Product D (code 3)
+    55.00ns INFO     cocotb.vending_machine             Depleting stock: 1st purchase of Product D with ₹5
+    65.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    65.00ns INFO     cocotb.vending_machine             Depleting stock: 2nd purchase attempt of Product D with ₹5 — Expect Out of Stock
+    75.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    75.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST ENDED ==========
+    75.00ns INFO     cocotb.regression                  vending_machine_test passed
+    75.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_vending_machine_all.vending_machine_test   PASS          75.00           0.00      37427.36  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                  75.00           0.01      11823.98  **
+                                                        *******************************************************************************************************
+                                                        
+VCD info: dumpfile dump.vcd opened for output.
+make[1]: Leaving directory '/home/mirafra/PycharmProjects/Vending_Machine'
+
+
+===== Batch Test Run at: 2025-08-08 16:33:51 =====
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project'
+rm -f results.xml
+MODULE=test_vending_machine_all TESTCASE= TOPLEVEL=vending_machine TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/mirafra/.local/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/mirafra/.local/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1754653198
+     0.00ns INFO     cocotb.regression                  Found test test_vending_machine_all.vending_machine_test
+     0.00ns INFO     cocotb.regression                  running vending_machine_test (1/1)
+                                                          Runs all test cases for the vending machine logic including stock and out_of_stock.
+    10.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST STARTED ==========
+    10.00ns INFO     cocotb.vending_machine             Test Case 1: Buy Product A (₹15) with ₹15
+    15.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    15.00ns INFO     cocotb.vending_machine             Test Case 2: Buy Product B (₹5) with ₹10 — Expect Out of Stock since stock=0
+    25.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹10, Out of Stock: 1
+    25.00ns INFO     cocotb.vending_machine             Test Case 3: Buy Product C (₹10) with ₹8 — Insufficient Money
+    35.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹8, Out of Stock: 0
+    35.00ns INFO     cocotb.vending_machine             Test Case 4: Buy Product D (₹5) with ₹5 — Exact Money
+    45.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    45.00ns INFO     cocotb.vending_machine             Test Case 5: Invalid Product Code (111) with ₹20
+    55.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹15, Out of Stock: 1
+    55.00ns INFO     cocotb.vending_machine             Testing stock depletion for Product D (code 3)
+    55.00ns INFO     cocotb.vending_machine             Depleting stock: 1st purchase of Product D with ₹5
+    65.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    65.00ns INFO     cocotb.vending_machine             Depleting stock: 2nd purchase attempt of Product D with ₹5 — Expect Out of Stock
+    75.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    75.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST ENDED ==========
+    75.00ns INFO     cocotb.regression                  vending_machine_test passed
+    75.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_vending_machine_all.vending_machine_test   PASS          75.00           0.00      20132.93  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                  75.00           0.07       1063.09  **
+                                                        *******************************************************************************************************
+                                                        
+VCD info: dumpfile dump.vcd opened for output.
+make[1]: Leaving directory '/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project'
+
+
+===== Batch Test Run at: 2025-08-08 17:09:54 =====
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project'
+rm -f results.xml
+MODULE=test_vending_machine_all TESTCASE= TOPLEVEL=vending_machine TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/mirafra/.local/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/mirafra/.local/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1754891507
+     0.00ns INFO     cocotb.regression                  Found test test_vending_machine_all.vending_machine_test
+     0.00ns INFO     cocotb.regression                  running vending_machine_test (1/1)
+                                                          Runs all test cases for the vending machine logic including stock and out_of_stock.
+    10.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST STARTED ==========
+    10.00ns INFO     cocotb.vending_machine             Test Case 1: Buy Product A (₹15) with ₹15
+    15.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    15.00ns INFO     cocotb.vending_machine             Test Case 2: Buy Product B (₹5) with ₹10 — Expect Out of Stock since stock=0
+    25.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹10, Out of Stock: 1
+    25.00ns INFO     cocotb.vending_machine             Test Case 3: Buy Product C (₹10) with ₹8 — Insufficient Money
+    35.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹8, Out of Stock: 0
+    35.00ns INFO     cocotb.vending_machine             Test Case 4: Buy Product D (₹5) with ₹5 — Exact Money
+    45.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    45.00ns INFO     cocotb.vending_machine             Test Case 5: Invalid Product Code (111) with ₹20
+    55.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹15, Out of Stock: 1
+    55.00ns INFO     cocotb.vending_machine             Testing stock depletion for Product D (code 3)
+    55.00ns INFO     cocotb.vending_machine             Depleting stock: 1st purchase of Product D with ₹5
+    65.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    65.00ns INFO     cocotb.vending_machine             Depleting stock: 2nd purchase attempt of Product D with ₹5 — Expect Out of Stock
+    75.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    75.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST ENDED ==========
+    75.00ns INFO     cocotb.regression                  vending_machine_test passed
+    75.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_vending_machine_all.vending_machine_test   PASS          75.00           0.00      33426.52  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                  75.00           0.04       1748.03  **
+                                                        *******************************************************************************************************
+                                                        
+VCD info: dumpfile dump.vcd opened for output.
+make[1]: Leaving directory '/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project'
+
+
+===== Batch Test Run at: 2025-08-11 11:21:44 =====
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project'
+rm -f results.xml
+MODULE=test_vending_machine_all TESTCASE= TOPLEVEL=vending_machine TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/mirafra/.local/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/mirafra/.local/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1755081195
+     0.00ns INFO     cocotb.regression                  Found test test_vending_machine_all.vending_machine_test
+     0.00ns INFO     cocotb.regression                  running vending_machine_test (1/1)
+                                                          Runs all test cases for the vending machine logic including stock and out_of_stock.
+    10.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST STARTED ==========
+    10.00ns INFO     cocotb.vending_machine             Test Case 1: Buy Product A (₹15) with ₹15
+    15.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    15.00ns INFO     cocotb.vending_machine             Test Case 2: Buy Product B (₹5) with ₹10 — Expect Out of Stock since stock=0
+    25.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹10, Out of Stock: 1
+    25.00ns INFO     cocotb.vending_machine             Test Case 3: Buy Product C (₹10) with ₹8 — Insufficient Money
+    35.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹8, Out of Stock: 0
+    35.00ns INFO     cocotb.vending_machine             Test Case 4: Buy Product D (₹5) with ₹5 — Exact Money
+    45.00ns INFO     cocotb.vending_machine             Dispensed: 1, Change Returned: ₹0, Out of Stock: 0
+    45.00ns INFO     cocotb.vending_machine             Test Case 5: Invalid Product Code (111) with ₹20
+    55.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹15, Out of Stock: 1
+    55.00ns INFO     cocotb.vending_machine             Testing stock depletion for Product D (code 3)
+    55.00ns INFO     cocotb.vending_machine             Depleting stock: 1st purchase of Product D with ₹5
+    65.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    65.00ns INFO     cocotb.vending_machine             Depleting stock: 2nd purchase attempt of Product D with ₹5 — Expect Out of Stock
+    75.00ns INFO     cocotb.vending_machine             Dispensed: 0, Change Returned: ₹5, Out of Stock: 1
+    75.00ns INFO     cocotb.vending_machine             ========== VENDING MACHINE TEST ENDED ==========
+    75.00ns INFO     cocotb.regression                  vending_machine_test passed
+    75.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_vending_machine_all.vending_machine_test   PASS          75.00           0.00      37258.91  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                  75.00           0.04       1772.91  **
+                                                        *******************************************************************************************************
+                                                        
+VCD info: dumpfile dump.vcd opened for output.
+make[1]: Leaving directory '/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project'
+
+
+===== Batch Test Run at: 2025-08-13 16:03:11 =====

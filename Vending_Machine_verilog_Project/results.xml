@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1755081195" />
+    <testcase name="vending_machine_test" classname="test_vending_machine_all" file="/home/mirafra/PycharmProjects/Vending_Machine_verilog_Project/test_vending_machine_all.py" lineno="7" time="0.002012968063354492" sim_time_ns="75.001" ratio_time="37258.9120341111" />
+  </testsuite>
+</testsuites>
