@@ -1,0 +1,93 @@
+HALF_SUBSTRACTOR
+
+`timescale 1ns / 1ps
+module half_subs(a,b,d,b0);
+input a,b;
+output d,b0;
+xor x1(d,a,b);
+wire nota;
+not x2(nota,a);
+and x3(b0,nota,b);
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+module half_subs_tb;
+
+  
+  reg a;
+  reg b;
+
+  wire d;
+  wire b0;
+
+  // Instantiate the Unit Under Test (UUT)
+  half_subs uut (
+    .a(a), 
+    .b(b), 
+    .d(d), 
+    .b0(b0)
+  );
+
+  initial begin
+    
+    $monitor("Time=%0t | a=%b b=%b => d=%b b0=%b", $time, a, b, d, b0);
+
+
+    a = 0; b = 0; #10;
+    a = 0; b = 1; #10;
+    a = 1; b = 0; #10;
+    a = 1; b = 1; #10;
+
+    $finish;
+  end
+
+endmodule
+
+FULL_SUBSTRACTOR:
+
+`timescale 1ns / 1ps
+module full_sub(a,b,bin,d,b0);
+input a,b,bin;
+output d,b0;
+assign d = a ^ b ^ bin;
+assign b0 = (~a & b) | ((~(a ^ b)) & bin);
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+module full_sub_tb;
+
+
+  reg a, b, bin;
+  wire d, b0;
+
+  full_sub uut (
+    .a(a),
+    .b(b),
+    .bin(bin),
+    .d(d),
+    .b0(b0)
+  );
+
+  initial begin
+    $display("A B Bin | D B0");
+    $display("--------|------");
+
+    // Apply all input combinations
+    a = 0; b = 0; bin = 0; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 0; b = 0; bin = 1; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 0; b = 1; bin = 0; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 0; b = 1; bin = 1; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 1; b = 0; bin = 0; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 1; b = 0; bin = 1; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 1; b = 1; bin = 0; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+    a = 1; b = 1; bin = 1; #10 $display("%b %b  %b  | %b  %b", a, b, bin, d, b0);
+
+    $finish;
+  end
+
+endmodule
+
