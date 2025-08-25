@@ -1,0 +1,101 @@
+DEMUX:
+
+module demux1to4 (
+    input din,
+    input [1:0] sel,
+    output reg [3:0] y
+);
+    always @(*) begin
+        y = 4'b0000; // Default all outputs to 0
+        case (sel)
+            2'b00: y[0] = din;
+            2'b01: y[1] = din;
+            2'b10: y[2] = din;
+            2'b11: y[3] = din;
+        endcase
+    end
+endmodule
+
+TEST_bench:
+
+module demux1to4_tb;
+    reg din;
+    reg [1:0] sel;
+    wire [3:0] y;
+
+    demux1to4 uut (
+        .din(din),
+        .sel(sel),
+        .y(y)
+    );
+
+    initial begin
+        $display("Time\tsel\tdin\ty");
+        $monitor("%0t\t%b\t%b\t%b", $time, sel, din, y);
+
+        din = 1;
+
+        sel = 2'b00; #10;
+        sel = 2'b01; #10;
+        sel = 2'b10; #10;
+        sel = 2'b11; #10;
+
+        din = 0; sel = 2'b10; #10;
+
+        $finish;
+    end
+endmodule
+
+COMPARATOR_2bit:
+
+module comparator_2bit (
+    input [1:0] A,
+    input [1:0] B,
+    output A_eq_B,
+    output A_gt_B,
+    output A_lt_B
+);
+
+assign A_eq_B = (A == B);
+assign A_gt_B = (A > B);
+assign A_lt_B = (A < B);
+
+endmodule
+
+TEST_bench:
+`timescale 1ns / 1ps
+module comparator_2bit_tb;
+
+ 
+  reg [1:0] A, B;
+  wire A_eq_B, A_gt_B, A_lt_B;
+
+  // Instantiate the comparator module
+  comparator_2bit uut (
+    .A(A),
+    .B(B),
+    .A_eq_B(A_eq_B),
+    .A_gt_B(A_gt_B),
+    .A_lt_B(A_lt_B)
+  );
+
+  initial begin
+    $display("Time\tA\tB\tA_eq_B\tA_gt_B\tA_lt_B");
+    $monitor("%0t\t%b\t%b\t%b\t%b\t%b", $time, A, B, A_eq_B, A_gt_B, A_lt_B);
+
+    // Test all combinations
+    A = 2'b00; B = 2'b00; #10;
+    A = 2'b00; B = 2'b01; #10;
+    A = 2'b01; B = 2'b00; #10;
+    A = 2'b10; B = 2'b10; #10;
+    A = 2'b11; B = 2'b10; #10;
+    A = 2'b01; B = 2'b11; #10;
+    A = 2'b11; B = 2'b11; #10;
+
+    $finish;
+  end
+
+endmodule
+
+
+
