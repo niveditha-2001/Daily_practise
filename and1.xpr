@@ -1,3 +1,4 @@
+AND_GATE:
 
 module and_gate (
     input a,      
@@ -37,5 +38,227 @@ module and_gate_tb;
         $finish;
     end
 endmodule
+
+OR_GATE:
+
+module or_gate (
+    input a,      
+    input b,      
+    output y      
+);
+
+assign y = a | b; 
+
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+
+module or_gate_tb;
+
+    reg a, b;       
+    wire y;        
+
+    
+    or_gate uut (
+        .a(a),
+        .b(b),
+        .y(y)
+    );
+
+    initial begin
+        // Monitor values
+        $monitor("Time=%0t | a=%b b=%b -> y=%b", $time, a, b, y);
+
+        // Test all input combinations
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+
+        $finish;
+    end
+
+endmodule
+
+NAND_GATE:
+
+module nand_gate (
+    input a,      
+    input b,      
+    output y      
+);
+
+assign y = ~(a & b); // NAND operation
+
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+module nand_gate_tb;
+
+    reg a, b;       
+    wire y;         
+
+    
+    nand_gate uut (
+        .a(a),
+        .b(b),
+        .y(y)
+    );
+
+    initial begin
+        // Monitor values
+        $monitor("Time=%0t | a=%b b=%b -> y=%b", $time, a, b, y);
+
+        // Test all input combinations
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+
+        $finish;
+    end
+
+endmodule
+
+NOR_GATE:
+
+module nor_gate (
+    input a,      
+    input b,      
+    output y      
+);
+
+assign y = ~(a | b); 
+
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+
+module nor_gate_tb;
+
+    reg a, b;      
+    wire y;         
+
+  
+    nor_gate uut (
+        .a(a),
+        .b(b),
+        .y(y)
+    );
+
+    initial begin
+        // Monitor values
+        $monitor("Time=%0t | a=%b b=%b -> y=%b", $time, a, b, y);
+
+        // Test all input combinations
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+
+        $finish;
+    end
+
+endmodule
+
+XOR_GATE:
+
+module xor_gate(
+  input a,
+  input b,
+  output y
+);
+  assign y = a ^ b;
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+
+module xor_gate_tb;
+
+  // Testbench signals
+  reg a, b;
+  wire y;
+
+  // Instantiate the XOR gate
+  xor_gate uut (
+    .a(a),
+    .b(b),
+    .y(y)
+  );
+
+  initial begin
+    $display("A B | Y");
+    $display("---------");
+
+    // Test all combinations
+    a = 0; b = 0; #10;
+    $display("%b %b | %b", a, b, y);
+
+    a = 0; b = 1; #10;
+    $display("%b %b | %b", a, b, y);
+
+    a = 1; b = 0; #10;
+    $display("%b %b | %b", a, b, y);
+
+    a = 1; b = 1; #10;
+    $display("%b %b | %b", a, b, y);
+
+    $finish;
+  end
+
+endmodule
+
+XNOR_GATE:
+
+module xnor_gate (
+    input a,    
+    input b,    
+    output y      
+);
+
+assign y = ~(a ^ b); 
+
+endmodule
+
+TEST_bench:
+
+`timescale 1ns / 1ps
+
+module xnor_gate_tb;
+
+    reg a, b;       
+    wire y;         
+
+ 
+    xnor_gate uut (
+        .a(a),
+        .b(b),
+        .y(y)
+    );
+
+    initial begin
+      
+        $monitor("Time=%0t | a=%b b=%b -> y=%b", $time, a, b, y);
+
+       
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+
+        $finish;
+    end
+
+endmodule
+
+
 
 
